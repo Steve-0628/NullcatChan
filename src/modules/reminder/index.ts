@@ -116,7 +116,10 @@ export default class extends Module {
 		if (done || cancel) {
 			this.unsubscribeReply(key);
 			this.reminds.remove(remind);
-			msg.reply(done ? getSerif(serifs.reminder.done(msg.friend.name)) : serifs.reminder.cancel);
+			msg.reply(done ? getSerif(serifs.reminder.done(msg.friend.name)) : serifs.reminder.cancel, {
+					visibility: "specified",
+					visibleUserIds: [msg.userId]
+			});
 			return;
 		} else {
 			if (msg.isDm) this.unsubscribeReply(key);
