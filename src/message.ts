@@ -102,7 +102,7 @@ export default class Message {
 		renote?: string;
 		immediate?: boolean;
 		visibility?: string;
-		visibleUserIds?: string[];
+		visibleUserIds?: string;
 	}) {
 		if (text == null) return;
 
