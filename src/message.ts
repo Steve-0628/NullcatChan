@@ -101,6 +101,8 @@ export default class Message {
 		cw?: string;
 		renote?: string;
 		immediate?: boolean;
+		visibility?: string;
+		visibleUserIds?: string[];
 	}) {
 		if (text == null) return;
 
@@ -121,7 +123,9 @@ export default class Message {
 				text: text,
 				fileIds: opts?.file ? [opts?.file.id] : undefined,
 				cw: opts?.cw,
-				renoteId: opts?.renote
+				renoteId: opts?.renote,
+				visibility: opts?.visibility,
+				visibleUserIds: opts?.visibleUserIds
 			});
 		}
 	}
