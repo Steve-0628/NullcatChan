@@ -118,7 +118,7 @@ export default class extends Module {
 			this.reminds.remove(remind);
 			msg.reply(done ? getSerif(serifs.reminder.done(msg.friend.name)) : serifs.reminder.cancel, {
 					visibility: "specified",
-					visibleUserIds: [msg.userId]
+					visibleUserIds: msg.userId
 			});
 			return;
 		} else {
