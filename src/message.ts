@@ -102,7 +102,7 @@ export default class Message {
 		renote?: string;
 		immediate?: boolean;
 		visibility?: string;
-		visibleUserIds?: string;
+		visibleUserIds?: string[];
 	}) {
 		if (text == null) return;
 
@@ -125,7 +125,7 @@ export default class Message {
 				cw: opts?.cw,
 				renoteId: opts?.renote,
 				visibility: opts?.visibility,
-				visibleUserIds: opts?.visibleUserIds
+				visibleUserIds: opts?.visibleUserIds[0] ? opts?.visibleUserIds : undefined
 			});
 		}
 	}
